@@ -2,7 +2,7 @@ const sendkeys = require('sendkeys')
 const { LiveChat } = require("youtube-chat")
 var robot = require("robotjs");
 
-const liveChat = new LiveChat({ liveId: "INSERT_LIVE_ID" })
+const liveChat = new LiveChat({ liveId: "INSERTLIVEIDHERE" })
 
 const ok = liveChat.start()
 
@@ -20,9 +20,10 @@ liveChat.on("chat", (chatItem) => {
  
 
 //ADD COMMANDS AND KEYSTROKES IN THIS SECTION
-//KEYCODES CAN BE FOUND HERE: https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys?view=windowsdesktop-6.0&viewFallbackFrom=netcore-3.1#remarks   
+//KEYCODES CAN BE FOUND HERE: https://robotjs.io/docs/syntax   
    
     if (chatmessage == "forward"){
+        console.log("Forward message received") 
         robot.setKeyboardDelay(100);
         robot.keyToggle("w", "down")
         robot.keyToggle("w", "up") 
