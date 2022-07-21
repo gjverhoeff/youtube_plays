@@ -1,5 +1,6 @@
 const sendkeys = require('sendkeys')
 const { LiveChat } = require("youtube-chat")
+var robot = require("robotjs");
 
 const liveChat = new LiveChat({ liveId: "INSERT_LIVE_ID" })
 
@@ -16,23 +17,58 @@ liveChat.on("end", (reason) => {
 liveChat.on("chat", (chatItem) => {
 
     chatmessage = chatItem.message[0].text
+ 
 
 //ADD COMMANDS AND KEYSTROKES IN THIS SECTION
 //KEYCODES CAN BE FOUND HERE: https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys?view=windowsdesktop-6.0&viewFallbackFrom=netcore-3.1#remarks   
    
     if (chatmessage == "forward"){
-        sendkeys('w')
-        console.log("Forward message received")  
+        robot.setKeyboardDelay(100);
+        robot.keyToggle("w", "down")
+        robot.keyToggle("w", "up") 
         
     }
     if (chatmessage == "backward"){
-        sendkeys('s')
-        console.log("Backward message received")  
+        console.log("Backward message received") 
+        robot.setKeyboardDelay(100);
+        robot.keyToggle("s", "down")
+        robot.keyToggle("s", "up")
+         
+        
+    }
+    if (chatmessage == "right"){
+        robot.setKeyboardDelay(100);
+        console.log("Right message received") 
+        robot.keyToggle("w", "down",)
+        robot.keyToggle("d", "down",)
+        robot.keyToggle("w", "up") 
+        robot.keyToggle("d", "up") 
+        
+    }
+    if (chatmessage == "left"){
+        robot.setKeyboardDelay(100);
+        console.log("Left message received") 
+        robot.keyToggle("w", "down",)
+        robot.keyToggle("a", "down",)
+        robot.keyToggle("w", "up") 
+        robot.keyToggle("a", "up") 
         
     }
     if (chatmessage == "enter"){
-        sendkeys('{ENTER}')
+        robot.keyTap("enter");
         console.log("Enter message received")  
+        
+    }
+    if (chatmessage == "jump"){
+        robot.keyTap("j");
+        console.log("Jump message received")  
+        
+    }
+    if (chatmessage == "boost"){
+        console.log("Boost message received") 
+        robot.setKeyboardDelay(100);
+        robot.keyToggle("t", "down")
+        robot.keyToggle("t", "up")
         
     }
     else{}
@@ -46,7 +82,5 @@ console.log("Error")
 })
 
 
-if (!ok) {
-    console.log("Failed to start, check emitted error")
-}
+
 
