@@ -2,7 +2,7 @@ const sendkeys = require('sendkeys')
 const { LiveChat } = require("youtube-chat")
 var robot = require("robotjs");
 
-const liveChat = new LiveChat({ liveId: "INSERTLIVEIDHERE" })
+const liveChat = new LiveChat({ liveId: "51BwwlY-P1Q" })
 
 const ok = liveChat.start()
 

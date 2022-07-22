@@ -16,7 +16,7 @@ Set the livestream ID on line 4. For example if the livestream is https://www.yo
 
 Set the commands you want it to run for certain messages in //ADD COMMANDS AND KEYSTROKES IN THIS SECTION
 
-For all different keycodes visit https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys?view=windowsdesktop-6.0&viewFallbackFrom=netcore-3.1#remarks  
+
 
 To run the script. 
 
