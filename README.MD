@@ -1,7 +1,9 @@
 
 # YouTube Plays
 
-A very basic NodeJS script for using YouTube Live Chat to do keyboard presses. Full tutorial will follow. 
+A very basic NodeJS script for using YouTube Live Chat to do keyboard presses. 
+
+YouTube Tutorial: https://www.youtube.com/watch?v=UlNFg5HmGNY
 
 
 ## Deployment
